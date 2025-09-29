@@ -5,26 +5,27 @@ import ScoreBoard from "./components/ScoreBoard";
 import questions from "./Data/questions";
 import styles from "./App.module.css";
 
-
 export default function App() {
 
+  // Estados principais
   const [current, setCurrent] = useState(0);
   const [time, setTime] = useState(0);
   const [answers, setAnswers] = useState([]);
   const [finished, setFinished] = useState(false);
 
+  // Timer do quiz
   useEffect(() => {
     if (finished) return;
     const timer = setInterval(() => setTime((t) => t + 1), 1000);
     return () => clearInterval(timer);
   }, [current, finished]);
 
-
+  // Resposta do usuário
   const handleAnswer = (selected) => {
     const q = questions[current];
     const correct = selected === q.answer;
 
-
+    // Salva a resposta
     setAnswers([
       ...answers,
       {
@@ -37,16 +38,18 @@ export default function App() {
       },
     ]);
 
-
+    // Vai para a próxima questão e deixa o timer zerado
     if (current + 1 < questions.length) {
       setCurrent(current + 1);
       setTime(0);
-    } else {
+    } 
+
+    else {
       setFinished(true);
     }
   };
 
-
+  // Reinicia o quiz
   const restartQuiz = () => {
     setCurrent(0);
     setTime(0);

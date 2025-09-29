@@ -1,12 +1,8 @@
-import { useEffect } from "react";
 import styles from "./Header.module.css";
 
 
 export default function Header({ current, total, time }) {
-    useEffect(() => {
-    }, [current]);
-
-
+    // Component de cabeçalho com informações do quiz
     return (
         <header className={styles.header}>
             <h1>Quiz Interativo</h1>
