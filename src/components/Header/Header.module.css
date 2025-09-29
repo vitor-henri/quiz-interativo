@@ -1,0 +1,17 @@
+.header {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    padding: 1rem;
+    background: #0099ff;
+    color: white;
+    border-radius: 8px;
+}
+
+
+.info {
+    display: flex;
+    gap: 1rem;
+    font-weight: bold;
+}
