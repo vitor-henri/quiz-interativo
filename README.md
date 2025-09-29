@@ -107,4 +107,4 @@ Vite
 
 👨‍💻 Autor
 
-Desenvolvido por Seu Nome
+Desenvolvido por Vitor Henrique Fonseca
