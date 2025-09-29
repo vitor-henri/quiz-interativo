@@ -14,13 +14,14 @@ export default function ScoreBoard({ answers, onRestart }) {
 
     return (
         <div className={styles.board}>
+            <header>
+                <h2>Resultado</h2>
+                <p>Pontuação Final: {totalScore}</p>
+                <p>Menor tempo de resposta: {minTime}s</p>
+                <p>Acertos: {totalCorrect} / {answers.length} ({percent}%)</p>
+                <button onClick={onRestart}>Reiniciar Quiz</button>
+            </header>
 
-            <h2>Resultado</h2>
-            <p>Pontuação Final: {totalScore}</p>
-            <p>Menor tempo de resposta: {minTime}s</p>
-            <p>Acertos: {totalCorrect} / {answers.length} ({percent}%)</p>
-            
-            <button onClick={onRestart}>Reiniciar Quiz</button>
 
             <div className={styles.list}>
                 {answers.map((a, i) => (
