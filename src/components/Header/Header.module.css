@@ -12,6 +12,7 @@
 
 .info {
     display: flex;
-    gap: 1rem;
+    flex-direction: column;
     font-weight: bold;
+    gap: 10px;
 }
